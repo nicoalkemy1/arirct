@@ -1,0 +1,72 @@
+[
+    {
+        "cantidad": 1,
+        "descripcion": "lo primero que hay que entender es que Johnnie Walker Blue Label es un blended, es decir, el resultado de mezclar varios whiskies que proceden de distintas destilerías.",
+        "id": 0,
+        "imagen": "./images/productos/Johnnie-walker-blue-label.png",
+        "marca": "Jhony Walker",
+        "precio": 109117.75,
+        "categoria": "Whisky",
+        "stock": 10
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "Gin Beefeater es una ginebra clásica y reconocida, destilada en Londres desde 1863. Con notas de enebro y cítricos, es suave, equilibrada y perfecta para cócteles clásicos",
+        "id": 1,
+        "imagen": "./images/productos/gin-beefeater.jpg",
+        "marca": "Beefeater",
+        "precio": 2500,
+        "categoria": "Gin",
+        "stock": 5
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "",
+        "id": 2,
+        "imagen": "./images/productos/BEEFEATER PINK STRAWBERRY_700cc_1.jpg",
+        "marca": "Beefeater pink",
+        "precio": 7500,
+        "categoria": "Gin",
+        "stock": 2
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "",
+        "id": 3,
+        "imagen": "./images/productos/bot-beefeater-24.jpg",
+        "marca": "Beefeater 24",
+        "precio": 5400,
+        "categoria": "Gin",
+        "stock": 7
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "El absoluto sabor mango es una descripción de un sabor que se utilizacomúnmente en la industria de alimentos y bebidas.Se refiere a un extracto altamenteconcentrado",
+        "id": 4,
+        "imagen": "./images/productos/absolut-mango.jpg",
+        "marca": "Absolut",
+        "precio": 3500,
+        "categoria": "Vodka",
+        "stock": 5
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "El absoluto sabor Vainilla es una descripción de un sabor que se utilizacomúnmente en la industria de alimentos y bebidas.Se refiere a un extracto altamenteconcentrado",
+        "id": 5,
+        "imagen": "./images/productos/absolut-vodka-vainilla-750ml.jpg",
+        "marca": "Absolut Vainilla",
+        "precio": 3200,
+        "categoria": "vodka",
+        "stock": 5
+    },
+    {
+        "cantidad": 1,
+        "descripcion": "Su sabor suave y equilibrado, combinado con su elegante presentación, lo convierten en la elección perfecta para disfrutar de momentos especiales",
+        "id": 6,
+        "imagen": "./images/productos/vodka.jpg",
+        "marca": "Absolut Mango",
+        "precio": 3700,
+        "categoria": "vodka",
+        "stock": 15
+    }
+]
