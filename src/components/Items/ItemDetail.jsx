@@ -1,4 +1,5 @@
 import { ItemCartWidget } from "./ItemCartWidget"
+import { generateCategory } from "./helpers/renderHelpers"
 
 const css = {
     backgroundColor: '#ececec',
@@ -21,7 +22,8 @@ const dataContainer = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: '0 2rem'
 }
 
 export const ItemDetail = ({ product }) =>
@@ -34,10 +36,12 @@ export const ItemDetail = ({ product }) =>
 
         <div style={ dataContainer }>
             <h2>{ product.marca }</h2>
-            <h3><u><i>Categoría: { product.categoria }</i></u></h3>
+            <br />
+            <h3>{ generateCategory(product.categoria) }</h3>
             <p>Descripción: { product.descripcion }</p>
+            <br />
             <h6>Stock: { product.stock }</h6>
             <h4>Precio: ${ product.precio }</h4>
-            <ItemCartWidget />
+            <ItemCartWidget max={ Number(product.stock) } />
         </div>
     </div>

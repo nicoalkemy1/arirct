@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Item } from "./Item"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { clearScreen } from "../utils/domUtils"
+import { allProducts, selectedCategory } from "./helpers/renderHelpers"
 
 const css = {
     display: 'flex',
@@ -10,50 +11,44 @@ const css = {
 
 export const ItemListContainer = () => {
 
-    // const { id } = useParams()
+    clearScreen('auto')
 
+    const { id } = useParams()
+
+    const [list, setList] = useState([])
     const [loading, setLoading] = useState(true)
     const [products, setProducts] = useState([])
 
-    const createProductsList = (list) => {
-        const result = []
-        const map = list.forEach(item => {
+
+    const createProductsList = (items) => {
+        let result = []
+        items.forEach(item => {
             if (!result.includes(item.categoria))
-                result.push(item.categoria)
+                result = [...result, item.categoria.toLowerCase()]
         })
-        return map
+        setList(result)
     }
 
-    const getProducts = async () => {
-        const res = await fetch('/data/data.json')
-        const data = await res.json()
-
-        const list = createProductsList(data)
-        console.log({ list });
-
-        setProducts(data)
-        setLoading(false)
-    }
 
     useEffect(() => {
+
+        const getProducts = async () => {
+            const res = await fetch('/data/data.json')
+            const data = await res.json()
+
+            createProductsList(data)
+            setProducts(data)
+            setLoading(false)
+        }
+
         if (loading) getProducts()
+
     }, [loading])
 
-    document.querySelector('body').style.overflowY = 'auto'
 
-    if (loading)
-        return <div>Cargando...</div>
-    else
-        return (
-            <div style={ css }>
-                { products.map(item =>
-                    <Link key={ item.id } to={ `/item/${item.id}` }>
-                        <Item
-                            marca={ item.marca }
-                            precio={ item.precio }
-                            imagen={ item.imagen } />
-                    </Link>) }
-            </div>
-        )
-
+    return loading
+        ? <div>Cargando...</div>
+        : list.includes(id)
+            ? <div style={ css }> { selectedCategory(products, id) } </div>
+            : <div style={ css }> { allProducts(products) } </div>
 }
